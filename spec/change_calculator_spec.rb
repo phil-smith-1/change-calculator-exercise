@@ -6,6 +6,21 @@ RSpec.describe ChangeCalculator do
   end
 
   describe '.denominations' do
+    it 'returns the correct change for £0' do
+      expect(described_class.denominations(0)).to eq(
+        {
+          '2': 0,
+          '1': 0,
+          '0.5': 0,
+          '0.2': 0,
+          '0.1': 0,
+          '0.05': 0,
+          '0.02': 0,
+          '0.01': 0
+        }
+      )
+    end
+
     it 'returns the correct change for £0.32' do
       expect(described_class.denominations(0.32)).to eq(
         {
